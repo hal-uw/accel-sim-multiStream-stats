@@ -452,7 +452,7 @@ if __name__ == '__main__':
     a = [sa["L2__GLOBAL_ACC_W__HIT"], sa["L2__GLOBAL_ACC_W__MSHR_HIT"], sa["L2__GLOBAL_ACC_W__MISS"], sa["L2__GLOBAL_ACC_W__TOTAL"]]
     b = [sb["L2__GLOBAL_ACC_W__HIT"], sb["L2__GLOBAL_ACC_W__MSHR_HIT"], sb["L2__GLOBAL_ACC_W__MISS"], sb["L2__GLOBAL_ACC_W__TOTAL"]]
     c = [sc["L2__GLOBAL_ACC_W__HIT"], sc["L2__GLOBAL_ACC_W__MSHR_HIT"], sc["L2__GLOBAL_ACC_W__MISS"], sc["L2__GLOBAL_ACC_W__TOTAL"]]
-    plot4(a, b, c, "L2__GLOBAL_ACC_W__HIT", "L2__GLOBAL_ACC_W__MSHR_HIT", "L2__GLOBAL_ACC_W__MISS", "L2__GLOBAL_ACC_W__TOTAL", "L2 cache Reads")
+    plot4(a, b, c, "L2__GLOBAL_ACC_W__HIT", "L2__GLOBAL_ACC_W__MSHR_HIT", "L2__GLOBAL_ACC_W__MISS", "L2__GLOBAL_ACC_W__TOTAL", "L2 cache Writes")
 
 
     timelines = list(zip(da["last_streamID"], [(s, e) for s, e in zip(da["start_cycle"], da["end_cycle"])]))
