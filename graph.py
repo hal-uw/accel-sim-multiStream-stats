@@ -24,18 +24,22 @@ def build_old_dic(f):
         "L1T_total_cache_accesses": [],
         "L1T_total_cache_misses": [],
         "Total_core__GLOBAL_ACC_R__HIT": [],
+        "Total_core__GLOBAL_ACC_R__MSHR_HIT": [],
         "Total_core__GLOBAL_ACC_R__MISS": [],
         "Total_core__GLOBAL_ACC_R__TOTAL": [],
         "Total_core__GLOBAL_ACC_W__HIT": [],
+        "Total_core__GLOBAL_ACC_W__MSHR_HIT": [],
         "Total_core__GLOBAL_ACC_W__MISS": [],
         "Total_core__GLOBAL_ACC_W__TOTAL": [],
 
         "L2_total_cache_accesses": [],
         "L2_total_cache_misses": [],
         "L2__GLOBAL_ACC_R__HIT": [],
+        "L2__GLOBAL_ACC_R__MSHR_HIT": [],
         "L2__GLOBAL_ACC_R__MISS": [],
         "L2__GLOBAL_ACC_R__TOTAL": [],
         "L2__GLOBAL_ACC_W__HIT": [],
+        "L2__GLOBAL_ACC_W__MSHR_HIT": [],
         "L2__GLOBAL_ACC_W__MISS": [],
         "L2__GLOBAL_ACC_W__TOTAL": [],
     }
@@ -69,6 +73,8 @@ def build_old_dic(f):
                         dic["Total_core__GLOBAL_ACC_R__TOTAL"].append(int(data[0]))
                     elif "[HIT]" in line:
                         dic["Total_core__GLOBAL_ACC_R__HIT"].append(int(data[0]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["Total_core__GLOBAL_ACC_R__MSHR_HIT"].append(int(data[0]))
                     elif "[MISS]" in line:
                         dic["Total_core__GLOBAL_ACC_R__MISS"].append(int(data[0]))
                 elif "GLOBAL_ACC_W" in line:
@@ -76,6 +82,8 @@ def build_old_dic(f):
                         dic["Total_core__GLOBAL_ACC_W__TOTAL"].append(int(data[0]))
                     elif "[HIT]" in line:
                         dic["Total_core__GLOBAL_ACC_W__HIT"].append(int(data[0]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["Total_core__GLOBAL_ACC_W__MSHR_HIT"].append(int(data[0]))
                     elif "[MISS]" in line:
                         dic["Total_core__GLOBAL_ACC_W__MISS"].append(int(data[0]))
             elif "L2_cache_stats_breakdown" in line:
@@ -84,6 +92,8 @@ def build_old_dic(f):
                         dic["L2__GLOBAL_ACC_R__TOTAL"].append(int(data[1]))
                     elif "[HIT]" in line:
                         dic["L2__GLOBAL_ACC_R__HIT"].append(int(data[1]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["L2__GLOBAL_ACC_R__MSHR_HIT"].append(int(data[1]))
                     elif "[MISS]" in line:
                         dic["L2__GLOBAL_ACC_R__MISS"].append(int(data[1]))
                 elif "GLOBAL_ACC_W" in line:
@@ -91,6 +101,8 @@ def build_old_dic(f):
                         dic["L2__GLOBAL_ACC_W__TOTAL"].append(int(data[1]))
                     elif "[HIT]" in line:
                         dic["L2__GLOBAL_ACC_W__HIT"].append(int(data[1]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["L2__GLOBAL_ACC_W__MSHR_HIT"].append(int(data[1]))
                     elif "[MISS]" in line:
                         dic["L2__GLOBAL_ACC_W__MISS"].append(int(data[1]))
     return dic
@@ -112,18 +124,22 @@ def build_dic(f):
         "L1T_total_cache_accesses": [],
         "L1T_total_cache_misses": [],
         "Total_core__GLOBAL_ACC_R__HIT": [],
+        "Total_core__GLOBAL_ACC_R__MSHR_HIT": [],
         "Total_core__GLOBAL_ACC_R__MISS": [],
         "Total_core__GLOBAL_ACC_R__TOTAL": [],
         "Total_core__GLOBAL_ACC_W__HIT": [],
+        "Total_core__GLOBAL_ACC_W__MSHR_HIT": [],
         "Total_core__GLOBAL_ACC_W__MISS": [],
         "Total_core__GLOBAL_ACC_W__TOTAL": [],
 
         "L2_total_cache_accesses": [],
         "L2_total_cache_misses": [],
         "L2__GLOBAL_ACC_R__HIT": [],
+        "L2__GLOBAL_ACC_R__MSHR_HIT": [],
         "L2__GLOBAL_ACC_R__MISS": [],
         "L2__GLOBAL_ACC_R__TOTAL": [],
         "L2__GLOBAL_ACC_W__HIT": [],
+        "L2__GLOBAL_ACC_W__MSHR_HIT": [],
         "L2__GLOBAL_ACC_W__MISS": [],
         "L2__GLOBAL_ACC_W__TOTAL": [],
     }
@@ -162,6 +178,8 @@ def build_dic(f):
                         dic["Total_core__GLOBAL_ACC_R__TOTAL"].append(int(data[1]))
                     elif "[HIT]" in line:
                         dic["Total_core__GLOBAL_ACC_R__HIT"].append(int(data[1]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["Total_core__GLOBAL_ACC_R__MSHR_HIT"].append(int(data[1]))
                     elif "[MISS]" in line:
                         dic["Total_core__GLOBAL_ACC_R__MISS"].append(int(data[1]))
                 elif "GLOBAL_ACC_W" in line:
@@ -169,6 +187,8 @@ def build_dic(f):
                         dic["Total_core__GLOBAL_ACC_W__TOTAL"].append(int(data[1]))
                     elif "[HIT]" in line:
                         dic["Total_core__GLOBAL_ACC_W__HIT"].append(int(data[1]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["Total_core__GLOBAL_ACC_W__MSHR_HIT"].append(int(data[1]))
                     elif "[MISS]" in line:
                         dic["Total_core__GLOBAL_ACC_W__MISS"].append(int(data[1]))
             elif "L2_cache_stats_breakdown" in line:
@@ -177,6 +197,8 @@ def build_dic(f):
                         dic["L2__GLOBAL_ACC_R__TOTAL"].append(int(data[2]))
                     elif "[HIT]" in line:
                         dic["L2__GLOBAL_ACC_R__HIT"].append(int(data[2]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["L2__GLOBAL_ACC_R__MSHR_HIT"].append(int(data[2]))
                     elif "[MISS]" in line:
                         dic["L2__GLOBAL_ACC_R__MISS"].append(int(data[2]))
                 elif "GLOBAL_ACC_W" in line:
@@ -184,6 +206,8 @@ def build_dic(f):
                         dic["L2__GLOBAL_ACC_W__TOTAL"].append(int(data[2]))
                     elif "[HIT]" in line:
                         dic["L2__GLOBAL_ACC_W__HIT"].append(int(data[2]))
+                    elif "[MSHR_HIT]" in line:
+                        dic["L2__GLOBAL_ACC_W__MSHR_HIT"].append(int(data[2]))
                     elif "[MISS]" in line:
                         dic["L2__GLOBAL_ACC_W__MISS"].append(int(data[2]))
     return dic
@@ -292,6 +316,25 @@ def plot3(a, b, c, la, lb, lc, title):
     plt.show()
 
 
+def plot4(a, b, c, la, lb, lc, ld, title):
+    ind = np.arange(4)
+    plt.figure(figsize=(10, 5))
+    width = 0.2
+
+    plt.bar(ind, a, width, label='tip_serialized')
+    plt.bar(ind + width, b, width, label='curr')
+    plt.bar(ind + 2 * width, c, width, label='tip')
+
+    plt.xlabel('Code')
+    plt.ylabel('Counts')
+    plt.title(title)
+
+    plt.xticks(ind + width, (la, lb, lc, ld))
+
+    plt.legend(loc='best')
+    plt.show()
+
+
 def process_timelines(data, title):
     data_sets = {}
     for tup in data:
@@ -388,28 +431,28 @@ if __name__ == '__main__':
     print_dicts(sa, sb, sc)
 
 
-    a = [sa["Total_core__GLOBAL_ACC_R__HIT"], sa["Total_core__GLOBAL_ACC_R__MISS"], sa["Total_core__GLOBAL_ACC_R__TOTAL"]]
-    b = [sb["Total_core__GLOBAL_ACC_R__HIT"], sb["Total_core__GLOBAL_ACC_R__MISS"], sb["Total_core__GLOBAL_ACC_R__TOTAL"]]
-    c = [sc["Total_core__GLOBAL_ACC_R__HIT"], sc["Total_core__GLOBAL_ACC_R__MISS"], sc["Total_core__GLOBAL_ACC_R__TOTAL"]]
-    plot3(a, b, c, "Total_core__GLOBAL_ACC_R__HIT", "Total_core__GLOBAL_ACC_R__MISS", "Total_core__GLOBAL_ACC_R__TOTAL", "L1 Cache Reads")
+    a = [sa["Total_core__GLOBAL_ACC_R__HIT"], sa["Total_core__GLOBAL_ACC_R__MSHR_HIT"], sa["Total_core__GLOBAL_ACC_R__MISS"], sa["Total_core__GLOBAL_ACC_R__TOTAL"]]
+    b = [sb["Total_core__GLOBAL_ACC_R__HIT"], sb["Total_core__GLOBAL_ACC_R__MSHR_HIT"], sb["Total_core__GLOBAL_ACC_R__MISS"], sb["Total_core__GLOBAL_ACC_R__TOTAL"]]
+    c = [sc["Total_core__GLOBAL_ACC_R__HIT"], sc["Total_core__GLOBAL_ACC_R__MSHR_HIT"], sc["Total_core__GLOBAL_ACC_R__MISS"], sc["Total_core__GLOBAL_ACC_R__TOTAL"]]
+    plot4(a, b, c, "Total_core__GLOBAL_ACC_R__HIT", "Total_core__GLOBAL_ACC_R__MSHR_HIT", "Total_core__GLOBAL_ACC_R__MISS", "Total_core__GLOBAL_ACC_R__TOTAL", "L1 Cache Reads")
 
 
-    a = [sa["Total_core__GLOBAL_ACC_W__HIT"], sa["Total_core__GLOBAL_ACC_W__MISS"], sa["Total_core__GLOBAL_ACC_W__TOTAL"]]
-    b = [sb["Total_core__GLOBAL_ACC_W__HIT"], sb["Total_core__GLOBAL_ACC_W__MISS"], sb["Total_core__GLOBAL_ACC_W__TOTAL"]]
-    c = [sc["Total_core__GLOBAL_ACC_W__HIT"], sc["Total_core__GLOBAL_ACC_W__MISS"], sc["Total_core__GLOBAL_ACC_W__TOTAL"]]
-    plot3(a, b, c, "Total_core__GLOBAL_ACC_W__HIT", "Total_core__GLOBAL_ACC_W__MISS", "Total_core__GLOBAL_ACC_W__TOTAL", "L1 Cache Writes")
+    a = [sa["Total_core__GLOBAL_ACC_W__HIT"], sa["Total_core__GLOBAL_ACC_W__MSHR_HIT"], sa["Total_core__GLOBAL_ACC_W__MISS"], sa["Total_core__GLOBAL_ACC_W__TOTAL"]]
+    b = [sb["Total_core__GLOBAL_ACC_W__HIT"], sb["Total_core__GLOBAL_ACC_W__MSHR_HIT"], sb["Total_core__GLOBAL_ACC_W__MISS"], sb["Total_core__GLOBAL_ACC_W__TOTAL"]]
+    c = [sc["Total_core__GLOBAL_ACC_W__HIT"], sc["Total_core__GLOBAL_ACC_W__MSHR_HIT"], sc["Total_core__GLOBAL_ACC_W__MISS"], sc["Total_core__GLOBAL_ACC_W__TOTAL"]]
+    plot4(a, b, c, "Total_core__GLOBAL_ACC_W__HIT", "Total_core__GLOBAL_ACC_W__MSHR_HIT", "Total_core__GLOBAL_ACC_W__MISS", "Total_core__GLOBAL_ACC_W__TOTAL", "L1 Cache Writes")
 
 
-    a = [sa["L2__GLOBAL_ACC_R__HIT"], sa["L2__GLOBAL_ACC_R__MISS"], sa["L2__GLOBAL_ACC_R__TOTAL"]]
-    b = [sb["L2__GLOBAL_ACC_R__HIT"], sb["L2__GLOBAL_ACC_R__MISS"], sb["L2__GLOBAL_ACC_R__TOTAL"]]
-    c = [sc["L2__GLOBAL_ACC_R__HIT"], sc["L2__GLOBAL_ACC_R__MISS"], sc["L2__GLOBAL_ACC_R__TOTAL"]]
-    plot3(a, b, c, "L2__GLOBAL_ACC_R__HIT", "L2__GLOBAL_ACC_R__MISS", "L2__GLOBAL_ACC_R__TOTAL", "L2 cache Reads")
+    a = [sa["L2__GLOBAL_ACC_R__HIT"], sa["L2__GLOBAL_ACC_R__MSHR_HIT"], sa["L2__GLOBAL_ACC_R__MISS"], sa["L2__GLOBAL_ACC_R__TOTAL"]]
+    b = [sb["L2__GLOBAL_ACC_R__HIT"], sb["L2__GLOBAL_ACC_R__MSHR_HIT"], sb["L2__GLOBAL_ACC_R__MISS"], sb["L2__GLOBAL_ACC_R__TOTAL"]]
+    c = [sc["L2__GLOBAL_ACC_R__HIT"], sc["L2__GLOBAL_ACC_R__MSHR_HIT"], sc["L2__GLOBAL_ACC_R__MISS"], sc["L2__GLOBAL_ACC_R__TOTAL"]]
+    plot4(a, b, c, "L2__GLOBAL_ACC_R__HIT", "L2__GLOBAL_ACC_R__MSHR_HIT", "L2__GLOBAL_ACC_R__MISS", "L2__GLOBAL_ACC_R__TOTAL", "L2 cache Reads")
 
 
-    a = [sa["L2__GLOBAL_ACC_W__HIT"], sa["L2__GLOBAL_ACC_W__MISS"], sa["L2__GLOBAL_ACC_W__TOTAL"]]
-    b = [sb["L2__GLOBAL_ACC_W__HIT"], sb["L2__GLOBAL_ACC_W__MISS"], sb["L2__GLOBAL_ACC_W__TOTAL"]]
-    c = [sc["L2__GLOBAL_ACC_W__HIT"], sc["L2__GLOBAL_ACC_W__MISS"], sc["L2__GLOBAL_ACC_W__TOTAL"]]
-    plot3(a, b, c, "L2__GLOBAL_ACC_W__HIT", "L2__GLOBAL_ACC_W__MISS", "L2__GLOBAL_ACC_W__TOTAL", "L2 cache Reads")
+    a = [sa["L2__GLOBAL_ACC_W__HIT"], sa["L2__GLOBAL_ACC_W__MSHR_HIT"], sa["L2__GLOBAL_ACC_W__MISS"], sa["L2__GLOBAL_ACC_W__TOTAL"]]
+    b = [sb["L2__GLOBAL_ACC_W__HIT"], sb["L2__GLOBAL_ACC_W__MSHR_HIT"], sb["L2__GLOBAL_ACC_W__MISS"], sb["L2__GLOBAL_ACC_W__TOTAL"]]
+    c = [sc["L2__GLOBAL_ACC_W__HIT"], sc["L2__GLOBAL_ACC_W__MSHR_HIT"], sc["L2__GLOBAL_ACC_W__MISS"], sc["L2__GLOBAL_ACC_W__TOTAL"]]
+    plot4(a, b, c, "L2__GLOBAL_ACC_W__HIT", "L2__GLOBAL_ACC_W__MSHR_HIT", "L2__GLOBAL_ACC_W__MISS", "L2__GLOBAL_ACC_W__TOTAL", "L2 cache Reads")
 
 
     timelines = list(zip(da["last_streamID"], [(s, e) for s, e in zip(da["start_cycle"], da["end_cycle"])]))
